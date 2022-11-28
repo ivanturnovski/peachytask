@@ -1,14 +1,17 @@
-import Swiper, { Autoplay } from "swiper";
+import Swiper, { Autoplay, Pagination } from "swiper";
 
 import "swiper/css";
 import "swiper/css/autoplay";
 import "swiper/css/grid";
+import "swiper/css/pagination";
 
 const Header = {
   onLoad() {
     this._init();
     this._initCartToggle();
     this._showHelper();
+    this._showHelper();
+    this._addToCart();
   },
 
   _init() {
@@ -37,9 +40,13 @@ const Header = {
 
     if (!window.matchMedia(Shopify.theme.media.sm).matches) {
       this.slider = new Swiper(this.sliderWrapper, {
+
+        pagination: {
+          el: ".swiper-pagination"
+        },
         slidesPerView: 1,
         autoplay: true,
-        modules: [Autoplay],
+        modules: [Autoplay, Pagination],
       });
     } else {
       this.slider = new Swiper(this.sliderWrapper, {
@@ -71,6 +78,20 @@ const Header = {
       ev.matches ? console.log("Desktop") : console.log("Mobile")
     );
   },
+  _addToCart() {
+    const addToCart = document.querySelectorAll(".add-to-cart");
+    if (addToCart != null) {
+      addToCart.forEach(function (el) {
+        el.addEventListener("click", function () {
+
+          console.log(el.previousElementSibling.value);
+          const variantId = el.previousElementSibling.value;
+          // eslint-disable-next-line no-undef
+          CartJS.addItem(variantId);
+        })
+      })
+    }
+  }
 };
 
 export default Header;

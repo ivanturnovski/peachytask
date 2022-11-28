@@ -10,6 +10,9 @@
     @apply rounded-b-lg;
   }
 }
+:root {
+  --swiper-pagination-color: #fcd34d;
+}
 
 .peachy-container {
   width: 1440px;
@@ -22,3 +25,7 @@ h2, h3 {
 .card-button {
   font-family: 'PT Sans Narrow', sans-serif;
 }
+.swiper-pagination {
+  bottom: 0!important;
+}
+
