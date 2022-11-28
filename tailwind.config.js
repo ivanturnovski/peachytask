@@ -6,6 +6,11 @@ module.exports = {
       center: true,
       padding: "1rem",
     },
+    extend: {
+      dropShadow: {
+        custom: "3px 3px",
+      }
+    }
   },
 
   plugins: [],

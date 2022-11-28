@@ -101,7 +101,7 @@
               var product = {{ product | json }};
               console.log(product);
             </script>
-            <div class="swiper-slide p-4">
+            <div class="swiper-slide p-4 h-auto">
               <div class="flex flex-col p-5 rounded-xl border-4 bg-rose-50 border-rose-200 h-full">
                 <div class="card-img">{{ product | image_url: width: 278 | image_tag: class: 'w-full' }}</div>
                 <div class="card-details mt-auto">
@@ -113,8 +113,9 @@
                       </option>
                     {% endfor %}
                   </select>
-                  <div class="card-button bg-amber-300 p-3 text-black border-2 border-black font-bold hover:drop-shadow-xl  hover:cursor-pointer">
-                    <span class=" uppercase">{{ product.price | money }} usd</span>
+                  <div class="card-button bg-amber-300 p-3 text-black border-2 text-sm border-black font-bold hover:drop-shadow-custom  hover:cursor-pointer">
+                    <span class="uppercase">{{ product.price | money }} usd |
+                    </span>
                     <button class="uppercase">Add to cart</button>
                   </div>
                 </div>
