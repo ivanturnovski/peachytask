@@ -1,4 +1,12 @@
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "5ac161a9-7c29-47e6-ba59-9e293188af3f": {
+      "type": "bestsellers",
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "5ac161a9-7c29-47e6-ba59-9e293188af3f"
+  ]
 }
